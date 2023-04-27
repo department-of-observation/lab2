@@ -1,23 +1,23 @@
 from statistics import median
-
-finalinput = 0
-min = 0
-max = 0
-
-
-def calcaverage():
-    average = sum(finalinput) / len(finalinput)
-    print(average)
-
-
+import math
+finalinput=[]
+sorted1=[]
 def main():
     print("ET0735 (DevOps for AIoT) - Lab 2 - Introduction to Python")
     display_main_menu()
-    get_user_input()
-    calcaverage()
-    find_min_max()
-    sort_temperature()
-    calc_median_temperature()
+    finalinput = get_user_input()
+    calcaverage(finalinput)
+    find_min_max(finalinput)
+    sorted1=sort_temperature(finalinput)
+    calc_median_temperature(sorted1)
+
+
+def calcaverage(finalinput):
+    average = sum(finalinput) / len(finalinput)
+    print(average)
+    return average
+
+
 
 
 def display_main_menu():
@@ -25,22 +25,32 @@ def display_main_menu():
 
 
 def get_user_input():
-    input = input()
-    split = input.split()
-    finalinput = [float(x) for x in split]
-    print('finalinput')
+    input1 = input('number?')
+    split = input1.split(",")
+    finalinput=[float(i) for i in split]
+    print(finalinput)
+    print(type(finalinput))
     return finalinput
 
 
-def find_min_max():
-    min = min(finalinput)
-    max = max(finalinput)
-    return (min, max)
+def find_min_max(finalinput):
+    min1 = min(finalinput)
+    max1 = max(finalinput)
+    print(max1)
+    print(min1)
+    return min, max
 
 
-def sort_temperature():
-    sorted(finalinput)
+def sort_temperature(finalinput):
+    sorted1 = sorted(finalinput)
+    print(sorted1)
+    return sorted1
 
 
-def calc_median_temperature():
-    median(finalinput)
+def calc_median_temperature(sorted1):
+    median1 = median(sorted1)
+    print(median1)
+    return median1
+
+if __name__ == '__main__':
+    main()
