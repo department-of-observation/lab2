@@ -1,3 +1,5 @@
+from statistics import median
+
 finalinput = 0
 min = 0
 max = 0
@@ -37,8 +39,8 @@ def find_min_max():
 
 
 def sort_temperature():
-    print('sort_temperature')
+    sorted(finalinput)
 
 
 def calc_median_temperature():
-    print('calc_median_temperature')
+    median(finalinput)
